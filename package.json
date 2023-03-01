@@ -1,0 +1,20 @@
+{
+  "name": "ecmascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "entregable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npr1990/entregablesBackEnd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npr1990/entregablesBackEnd/issues"
+  },
+  "homepage": "https://github.com/npr1990/entregablesBackEnd#readme"
+}
