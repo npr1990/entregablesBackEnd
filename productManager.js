@@ -45,7 +45,7 @@ class ProductManager {
     }
   }
 
-  addItem(item) {
+  #addItem(item) {
     const data = this.read();
     data.push(item);
     this.write(data);
@@ -66,7 +66,7 @@ class ProductManager {
       code,
       stock,
     };
-    this.addItem(newProduct);
+    this.#addItem(newProduct);
     return newProduct;
   }
 
@@ -152,3 +152,6 @@ try {
 
 console.log(productManager1.getProductById(productoAgregado.id));
 console.log("FIN DE TEST");
+
+
+module.exports = ProductManager;
