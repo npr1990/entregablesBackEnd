@@ -1,7 +1,7 @@
 const http = require('http');
 
 const server = http.createServer((request, responde) => {
-  responde.end("A VERGA")
+  responde.end("")
 })
 
 server.listen(8080, ()=> {

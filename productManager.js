@@ -2,20 +2,10 @@ const fs = require("fs");
 
 class ProductManager {
   constructor() {
-    //this.products = [];
-    this.path = "./dataBase.json";
+
+    this.path = "./product.json";
   }
 
-  /*getProducts() {
-    fs.readFile(this.path, (err, data) => {
-      if (err) {
-        this.products = [];
-        return;
-      }
-      this.products = data;
-    });
-    return this.products;
-  }*/
 
   getProducts() {
     return this.read()
@@ -24,9 +14,9 @@ class ProductManager {
   
   read() {
     try {
-      // Check if the file exists before reading it
+
       if (!fs.existsSync(this.path)) {
-        this.write([]); // create a new file with empty array if it doesn't exist
+        this.write([]); 
       }
       const data = fs.readFileSync(this.path, 'utf8');
       return JSON.parse(data);
@@ -113,45 +103,6 @@ class ProductManager {
     return id;
   };
 };
-
-const productManager1 = new ProductManager();
-productManager1.write([])
-console.log(productManager1.read());
-
-let productoAgregado;
-productoAgregado = productManager1.addProduct(
-  "producto prueba",
-  "Esto es un producto prueba",
-  200,
-  "sin imagen",
-  "abc123",
-  25
-);
-
-console.log(productoAgregado);
-console.log(productManager1.read());
-
-try {
-  productManager1.addProduct(
-    "producto prubea",
-    "Esto es un producto prueba",
-    200,
-    "sin imagen",
-    "abc123",
-    25
-  );
-} catch (error) {
-  console.log(error);
-}
-
-try {
-  productManager1.getProductById(7331);
-} catch (error) {
-  console.log(error);
-}
-
-console.log(productManager1.getProductById(productoAgregado.id));
-console.log("FIN DE TEST");
 
 
 module.exports = ProductManager;
